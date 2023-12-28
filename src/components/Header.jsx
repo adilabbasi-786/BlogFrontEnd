@@ -128,6 +128,16 @@ function Header() {
                       >
                         Logout
                       </button>
+                      {userState?.userInfo?.admin && (
+                        <button
+                          onClick={() => navigate("/admin")}
+                          type="button"
+                          className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
+                        >
+                          Admin Dashboard
+                        </button>
+                      )}
+                      {console.log("admin", userState?.userInfo?.admin)}
                       <button
                         onClick={() => navigate("/profile")}
                         type="button"
