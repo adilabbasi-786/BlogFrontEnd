@@ -1,5 +1,5 @@
 import React from "react";
-import { images } from "../../constants";
+import { images, stables } from "../../constants";
 import { FiMessageSquare, FiTrash } from "react-icons/fi";
 import { AiTwotoneEdit } from "react-icons/ai";
 import CommentsForms from "./CommentsForms";
@@ -30,9 +30,13 @@ function Comment({
   return (
     <div className="flex flex-nowrap items-start gap-x-3 bg-[#F2F4F5] p-3 rounded-lg">
       <img
-        src={images.postProfileImg}
+        src={
+          comment?.user?.avatar
+            ? stables.UPLOAD_FOLDER_BASE_URL + comment.user.avatar
+            : images.userImage
+        }
         alt="user profile"
-        lassName="w-9 h-9 object-cover rounded-full"
+        className="w-9 h-9 object-cover rounded-full"
       />
       <div className="flex-1 flex flex-col">
         <h5 className="font-bold text-dark-hard text-xs lg:text-sm">
